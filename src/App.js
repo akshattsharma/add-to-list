@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 // Every visible string lives here so it can be matched to the design images in one place.
 const TEXT = {
-  title: "Add to List",
+  title: "Add Items to List",
   placeholder: "Enter an item",
   button: "Add",
+  remove: "Remove",
 };
 
 export default function App() {
@@ -18,6 +19,8 @@ export default function App() {
     setItems((list) => [...list, { id: Date.now() + Math.random(), value }]);
     setItem("");
   };
+
+  const remove = (id) => setItems((list) => list.filter((i) => i.id !== id));
 
   return (
     <main className="app">
@@ -38,7 +41,12 @@ export default function App() {
 
       <ul className="list">
         {items.map((i) => (
-          <li key={i.id}>{i.value}</li>
+          <li key={i.id}>
+            <span>{i.value}</span>
+            <button type="button" className="btn remove" onClick={() => remove(i.id)}>
+              {TEXT.remove}
+            </button>
+          </li>
         ))}
       </ul>
     </main>

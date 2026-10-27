@@ -9,4 +9,6 @@ h1 { margin: 0 0 20px; font-size: clamp(1.5rem, 5vw, 2.2rem); letter-spacing: -0
 .btn { border: 0; border-radius: 10px; background: var(--accent); color: #fff; padding: 12px 20px; font: inherit; font-weight: 600; cursor: pointer; }
 .btn:hover { filter: brightness(1.08); }
 .list { margin: 20px 0 0; padding-left: 24px; }
-.list li { padding: 6px 0; overflow-wrap: anywhere; }
+.list li { padding: 6px 0; }
+.list li span { overflow-wrap: anywhere; margin-right: 12px; }
+.btn.remove { background: transparent; color: #c0392b; border: 1px solid #e6c3bf; padding: 4px 12px; font-size: 0.85rem; }
